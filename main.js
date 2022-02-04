@@ -50,12 +50,25 @@ function playRound(playerSelection, computerSelection) {
 const selections = document.createElement('h2');
 const outcome = document.createElement('h1');
 const result = document.createElement('h2');
+const winner = document.createElement('h2');
 const container = document.querySelector('#container');
 function displayOutcome(a){
     outcome.textContent = a;
-    result.textContent = `Your score: ${playerScore}`;
+    result.textContent = `Your score: ${playerScore} Computer\'s score: ${computerScore}`;
     container.appendChild(result);
     container.appendChild(outcome);
+    if(playerScore == 5){
+        winner.textContent = "You won the match!";
+        container.appendChild(winner);
+    }
+    else if(computerScore == 5){
+        winner.textContent = "Computer won the match D:";
+        container.appendChild(winner);
+    }
+    else{
+        winner.textContent = ""
+        container.appendChild(winner);
+    }
 
 }
 
